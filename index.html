@@ -1,0 +1,473 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+code
+	{font-family:"Courier New";}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink="#954F72">
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='text-align:center;line-height:normal'><b><span
+style='font-size:18.0pt;font-family:"Times New Roman",serif'>Automated ELK
+Stack Deployment</span></b></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>The files in this repository were used to
+configure the network depicted below.</span></p>
+
+<p class=MsoNormal style='line-height:normal'><img width=624 height=418
+id="Picture 1" src="index_files/image001.jpg"></p>
+
+<p class=MsoNormal style='line-height:normal'><a
+href="../../../../GW-Coding-Boot-Camp/GWU-WDC-CYBER-PT-01-2020-U-C/master/Images/diagram_filename.png"
+target="&quot;_blank&quot;"><img border=0 width=32 height=32
+src="index_files/image002.png"
+alt="TODO: Update the path with the name of your diagram" title=""></a></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>These files have been tested and used to
+generate a live ELK deployment on Azure. They can be used to recreate the
+entire deployment pictured above. Alternatively, select portions of the Playbook
+file may be used to install only certain pieces of it, such as Filebeat.</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;line-height:normal'><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>This document contains the following
+details:</span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+     font-family:"Times New Roman",serif'>Description of the Topology</span></li>
+ <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+     font-family:"Times New Roman",serif'>Access Policies</span></li>
+ <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+     font-family:"Times New Roman",serif'>ELK Configuration </span></li>
+ <ul type=circle>
+  <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+      font-family:"Times New Roman",serif'>Beats in Use</span></li>
+  <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+      font-family:"Times New Roman",serif'>Machines Being Monitored</span></li>
+ </ul>
+ <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+     font-family:"Times New Roman",serif'>How to Use the Ansible Build</span></li>
+</ul>
+
+<p class=MsoListParagraph style='margin-left:.75in;text-indent:-.5in;
+line-height:normal'><b><span style='font-size:13.5pt;font-family:"Times New Roman",serif'>I.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></b><b><span style='font-size:13.5pt;font-family:"Times New Roman",serif'>Description
+of the Topology</span></b></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>The main purpose of this network is to
+expose a load-balanced and monitored instance of DVWA Vulnerable Web
+Application.</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>Load balancing ensures that the
+application will be highly available, in addition to restricting access to the
+network.</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;line-height:normal'><i><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>Security advantage
+of load balancers </span></i></p>
+
+<p class=MsoNormal style='margin-left:.5in;line-height:normal'><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>Load balancers
+protect the availability aspect of security. They </span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif;color:black;
+background:#FEFEFE'>provide the features needed to counter security threats
+like high-volume DDoS attacks. Load balancers also have features and policy
+controls to stop bad traffic from ever reaching the application, including rate
+limiting and URL filtering.</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;line-height:normal'><i><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>Security advantage
+of a jump box</span></i></p>
+
+<p class=MsoNormal style='margin-left:.5in;line-height:normal'><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif;color:#16161D;
+letter-spacing:.2pt;background:white'>A jump boxes both is a highly secure
+computer used for completing admin tasks or used as jumping off points to other
+computers and networks. It has strong computer security controls applied, far
+stricter than would normally be applied in the regular environment. It is not
+connected to unsecure computers and is less likely to pick up exploits. It is
+used to perform administrative tasks on mission-critical resources.</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>Integrating an ELK server allows users to
+easily monitor the vulnerable VMs for changes to the file system and system logs.</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;line-height:normal'><i><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>What does Filebeat
+watch for?</span></i></p>
+
+<p class=MsoNormal style='margin-left:.5in;line-height:normal'><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>Filebeat log
+information about the file system, including which files have changed and when.</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;line-height:normal'><i><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>What does
+Metricbeat record?</span></i></p>
+
+<p class=MsoNormal style='margin-left:.5in;line-height:normal'><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>Metricbeat record
+system performance metric such as CPU usage, memory, and load. </span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif;color:#53585F;
+background:white'>In dockerized environments, Metricbeat can be installed on a
+host for monitoring container performance metrics.</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>The configuration details of each machine
+may be found below:</span></p>
+
+<p class=MsoNormal style='line-height:normal'><img width=624 height=107
+id="Picture 2" src="index_files/image003.jpg"></p>
+
+<p class=MsoListParagraph style='margin-left:.75in;text-indent:-.5in;
+line-height:normal'><b><span style='font-size:13.5pt;font-family:"Times New Roman",serif'>II.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></b><b><span style='font-size:13.5pt;font-family:"Times New Roman",serif'>Access
+Policies</span></b></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>The machines on the internal network are
+not exposed to the public Internet.</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>All the machines in the virtual network
+can be accessed from a container inside the Jump-Box-Provisioner.</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>The jump-Box-Provisioner can be accessed
+from a single public IP address trough ssh connection on port 22.</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>This single public IP is also used to
+access Kibana on the ELK server to visualize your Elasticsearch data and
+navigate the Elastic Stack so you can do anything from tracking query load to
+understanding the way requests flow through the DVWA web apps.</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>HTTP traffic towards the web servers is
+filtered through the load balancer before accessing the web application hosted
+inside DVWA-VM1 and DVWA-VM2.</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>DVWA-VM1 and DVWA-VM2 do not have a built-in
+public IP. They can be reached through the public IP of the load balancer,
+13.77.173.56.</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>A summary of the access policies in place
+can be found in the table below.</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:normal'><img width=624 height=161
+id="Picture 4" src="index_files/image004.jpg"></p>
+
+<table class=MsoNormalTable border=0 cellspacing=4 cellpadding=0>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+</table>
+
+<p class=MsoListParagraph style='margin-left:.75in;text-indent:-.5in;
+line-height:normal'><b><span style='font-size:13.5pt;font-family:"Times New Roman",serif'>III.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></b><b><span style='font-size:13.5pt;font-family:"Times New Roman",serif;
+color:white'>Elk Configuration</span></b></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>A free open-source tool, amazingly simple
+to set up and use, yet powerful, Ansible, was used to automate configuration of
+the ELK machine. No configuration was performed manually, which is advantageous
+because it is efficient and increases productivity and reliability.</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>Ansible is agentless and does not require
+any other software or firewall ports on the ELK server or the DVWA machines.</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>Automating configuration with Ansible
+frees IT administrators to focus on efforts </span><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif;color:#222222;background:white'>that help
+deliver more value to the business by spending time on more important tasks.</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>The playbook implements the following
+tasks:</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in;line-height:normal'><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>Download the </span><span
+style='font-size:10.0pt;font-family:"Courier New"'>.deb</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'> file from </span><a
+href="https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.4.0-amd64.deb"
+target="_blank"><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>artifacts.elastic.co</span></a><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>.</span></p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-.25in;line-height:normal'><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>Install the </span><span
+style='font-size:10.0pt;font-family:"Courier New"'>.deb</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'> file using the </span><span
+style='font-size:10.0pt;font-family:"Courier New"'>dpkg</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'> command shown
+below:</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;line-height:normal'><span
+style='font-size:10.0pt;font-family:"Courier New"'>dpkg -i
+filebeat-7.4.0-amd64.deb</span></p>
+
+<p class=MsoListParagraph style='text-indent:-.25in;line-height:normal'><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>Copy the Filebeat
+configuration file from your Ansible container to your ELK VM.</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;line-height:normal'><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='text-indent:-.25in;line-height:normal'><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>Run the following
+commands:</span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt;
+     font-family:"Courier New"'>./filebeat modules enable system</span></li>
+ <li class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt;
+     font-family:"Courier New"'>./filebeat setup</span></li>
+ <li class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt;
+     font-family:"Courier New"'>./filebeat -e</span></li>
+</ul>
+
+<p class=MsoNormal style='margin-left:.25in;line-height:normal'><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>The following screenshot displays the
+result of running </span><span style='font-size:10.0pt;font-family:"Courier New"'>docker
+ps</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+after successfully configuring the ELK instance.</span></p>
+
+<p class=MsoNormal style='line-height:normal'><img border=0 width=624
+height=66 id="Picture 5" src="index_files/image005.png"></p>
+
+<p class=MsoNormal style='line-height:normal'><a
+href="../../../../GW-Coding-Boot-Camp/GWU-WDC-CYBER-PT-01-2020-U-C/master/Images/docker_ps_output.png"
+target="&quot;_blank&quot;"><img border=0 width=32 height=32
+src="index_files/image002.png"
+alt="TODO: Update the path with the name of your screenshot of docker ps output"
+title=""></a></p>
+
+<p class=MsoNormal style='line-height:normal'><b><span style='font-size:13.5pt;
+font-family:"Times New Roman",serif'>Target Machines &amp; Beats</span></b></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>This ELK server is configured to monitor
+the following machines:</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-left:1.0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>DVWA-VM1              IP
+Address: 10.0.0.5</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-left:1.0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>DVWA-VM2              IP
+Address: 10.0.0.7</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>We have installed the following Beats on
+these machines:</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;line-height:normal'><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>Filebeat and
+metricbeat were successfully installed on DVWA-VM1 and DVWA-VM2.</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>These Beats allow us to collect the
+following information from each machine:</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;line-height:normal'><b><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif;color:#222222'>Filebeat</span></b><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif;color:#222222;
+background:white'> as &quot;A lightweight shipper for forwarding and
+centralizing log data. It helps you keep the simple things simple by offering a
+lightweight way to forward and centralize logs and files. On the other hand, </span><b><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif;color:#222222'>Metricbeat</span></b><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif;color:#222222;
+background:white'> is detailed as &quot;A Lightweight Shipper for Metrics&quot;.</span></p>
+
+<p class=MsoListParagraph style='margin-left:.75in;text-indent:-.5in;
+line-height:normal'><b><span style='font-size:13.5pt;font-family:"Times New Roman",serif'>IV.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></b><b><span style='font-size:13.5pt;font-family:"Times New Roman",serif'>Using
+the Playbook</span></b></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>In order to use the playbook, you will
+need to have an Ansible control node already configured. Assuming you have such
+a control node provisioned:</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>SSH into the control node and follow the
+steps below:</span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+     font-family:"Times New Roman",serif'>Copy the playbook file </span><span
+     style='font-size:12.0pt;font-family:"Times New Roman",serif'>filebeat-playbook.yml</span><span
+     style='font-size:12.0pt;font-family:"Times New Roman",serif'> to the
+     ansible container.</span></li>
+ <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+     font-family:"Times New Roman",serif'>Update the filebeat configuration
+     file </span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>/etc/ansible/files/filebeat-configuration.yml</span><span
+     style='font-size:12.0pt;font-family:"Times New Roman",serif'>  file to
+     include</span> <span style='font-size:12.0pt;font-family:"Times New Roman",serif'>your
+     ELK server's IP address</span>: <a
+     href="https://portal.azure.com/#blade/HubsExtension/ResourceMenuBlade/id/%2Fsubscriptions%2Fc8b1d1f0-e976-46ba-8471-9e8533b6b5d2%2FresourceGroups%2FMathPower%2Fproviders%2FMicrosoft.Network%2FpublicIPAddresses%2FELK-Server-ip/menuid/configuration"
+     title=13.77.139.204><span style='font-size:12.0pt;font-family:"Times New Roman",serif;
+     color:black;background:white;text-decoration:none'>13.77.139.204</span></a></li>
+ <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+     font-family:"Times New Roman",serif'>Run the playbook, and navigate to </span><span
+     style='font-size:12.0pt;font-family:"Times New Roman",serif'>http://
+     http://</span><a
+     href="https://portal.azure.com/#blade/HubsExtension/ResourceMenuBlade/id/%2Fsubscriptions%2Fc8b1d1f0-e976-46ba-8471-9e8533b6b5d2%2FresourceGroups%2FMathPower%2Fproviders%2FMicrosoft.Network%2FpublicIPAddresses%2FELK-Server-ip/menuid/configuration"
+     title=13.77.139.204><span style='font-size:12.0pt;font-family:"Times New Roman",serif;
+     color:black;background:white;text-decoration:none'>13.77.139.204</span></a><span
+     style='font-size:12.0pt;font-family:"Times New Roman",serif'>:5601:5601</span><span
+     style='font-size:12.0pt;font-family:"Times New Roman",serif'> to check
+     that the installation worked as expected.</span></li>
+</ul>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>To run the playbook, from the Ansible
+directory, enter the command: </span></p>
+
+<p class=MsoNormal style='line-height:normal'><code><span style='font-size:
+12.0pt;font-family:"Times New Roman",serif'>ansible-playbook
+filebeat-playbook.yml</span></code></p>
+
+<p class=MsoNormal style='line-height:normal'><code><span style='font-size:
+12.0pt;font-family:"Times New Roman",serif'>Click on the link below to access
+the configuration files used to deploy the virtual network.</span></code></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'><a href="Filebeat_Playbook.htm">filebeat-laybook.yml</a></span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'><a href="Filebeat_Configuration.htm">filebeat-configuration.yml</a></span></p>
+
+<p class=MsoNormal style='line-height:normal'><a href="metricbeat_playbook.htm"><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>metricbeat-playbook.yml</span></a></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'><a href="metricbeat-configuration.htm">metricbeat-configuration.yml</a></span></p>
+
+</div>
+
+</body>
+
+</html>
